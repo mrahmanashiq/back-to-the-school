@@ -2,7 +2,7 @@ import java.util.*;
 import java.lang.*;
 
 // The main method must be in a class named "Main"
-class Main {
+class ArmStrongNumber {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -15,14 +15,10 @@ class Main {
         int givenNumber = n;
         while (n > 0) {
             int rem = n % 10;
-            sum += Math.pow(rem, lenOfDigit);
+            sum += (int) Math.pow(rem, lenOfDigit);
             n = n / 10;
         }
-        if (sum == givenNumber) {
-            return true;
-        } else {
-            return false;
-        }
+        return sum == givenNumber;
     }
 
     public static int countOfDigit(int n) {
